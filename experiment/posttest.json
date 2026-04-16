@@ -1,39 +1,96 @@
 {
   "version": 2.0,
+  "quiz_title": "QUIZ - High Voltage Measurements",
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "num": 6,
+      "question": "Impulse ratio of a rod gap -",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Unity",
+        "b": "Between 1.2 and 1.5",
+        "c": "Between 1.6 and 1.8",
+        "d": "Between 2 and 2.2"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Incorrect. Impulse ratio is not unity for rod gaps.",
+        "b": "Correct. Impulse ratio (impulse breakdown voltage / peak power frequency breakdown voltage) for rod gaps is typically 1.2 to 1.5.",
+        "c": "Incorrect. That range is too high.",
+        "d": "Incorrect."
       },
-      "correctAnswer": "a",
+      "correctAnswer": "b",
+      "difficulty": "advanced"
+    },
+    {
+      "num": 7,
+      "question": "which electrode has minimum breakdown voltage -",
+      "answers": {
+        "a": "Sphere electrode",
+        "b": "Pointed electrode",
+        "c": "Flat Electrode",
+        "d": "Big sphere electrode"
+      },
+      "explanations": {
+        "a": "Incorrect. Spheres produce uniform field, requiring higher voltage.",
+        "b": "Correct. Pointed electrodes (sharp points) cause field concentration, leading to corona and breakdown at lower voltages.",
+        "c": "Incorrect. Flat electrodes require higher voltage.",
+        "d": "Incorrect. Large spheres give more uniform field, higher breakdown voltage."
+      },
+      "correctAnswer": "b",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "num": 8,
+      "question": "The insulation of the modern EHV lines is designed based on -",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "The lightning voltage",
+        "b": "The switching voltage",
+        "c": "Corona",
+        "d": "RI"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Incorrect. For EHV (400 kV and above), switching surges are more critical than lightning.",
+        "b": "Correct. Modern EHV lines are designed based on switching overvoltages, which are higher than lightning surges at these voltage levels.",
+        "c": "Incorrect. Corona affects losses and RI, not basic insulation level.",
+        "d": "Incorrect."
       },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "num": 9,
+      "question": "Minimum sparking potential of Air is about -",
+      "answers": {
+        "a": "100 V",
+        "b": "4.4 kV",
+        "c": "40 V",
+        "d": "325 V"
+      },
+      "explanations": {
+        "a": "Incorrect.",
+        "b": "Incorrect. That is for a specific gap distance.",
+        "c": "Incorrect. Too low for Paschen's minimum.",
+        "d": "Correct. Paschen's minimum for air is approximately 325 V at a pressure × distance (pd) of about 0.75 Torr·cm."
+      },
+      "correctAnswer": "d",
+      "difficulty": "advanced"
+    },
+    {
+      "num": 10,
+      "question": "Electrostatic voltmeter can measure -",
+      "answers": {
+        "a": "Only DC voltages",
+        "b": "Both DC and AC voltages upto high frequency",
+        "c": "Impulse voltages",
+        "d": "Only DC and AC peak voltages"
+      },
+      "explanations": {
+        "a": "Incorrect. It can also measure AC.",
+        "b": "Correct. Electrostatic voltmeters measure RMS of both DC and AC voltages accurately up to high frequencies.",
+        "c": "Incorrect. Not suitable for fast impulses due to mechanical inertia.",
+        "d": "Incorrect. It measures RMS, not peak."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
     }
   ]
 }
