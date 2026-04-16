@@ -24,3 +24,29 @@ There are basically two basic arrangements of sphere gaps for measuring purposes
 2. The control unit is connected to supply voltage taking care that the earth connections are effective.
 3. The multiple point control switch is set at its lowest tapping.
 4. The push button on control unit is pressed firmly for at least 5 seconds. Note that no Breakdown to occurs, in which case button should be released at once without delay. Break down is indicated by a continuous discharge across the gap and meter indicating a sudden voltage drop.
+
+# Experiment 5 - Equipments Required
+
+## Fig.1: High Voltage Transformer
+
+![High Voltage Transformer](images/exp5/tr3.JPG)
+
+## Fig.2: HV Control Desk
+
+![HV Control Desk](images/exp5/equ2.JPG)
+
+## Fig.3: Spherical Electrode
+
+![Spherical Electrode](images/exp5/n1.jpg)
+
+## Fig.4: Flat Electrode
+
+![Flat Electrode](images/exp5/equ4.JPG)
+
+## Fig.5: Disk Electrode
+
+![Disk Electrode](images/exp5/equ5.JPG)
+
+## Fig.6: Pointed Electrode
+
+![Pointed Electrode](images/exp5/equ6.JPG)
