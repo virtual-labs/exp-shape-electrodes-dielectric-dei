@@ -1,0 +1,96 @@
+{
+  "version": 2.0,
+  "quiz_title": "QUIZ - High Voltage Measurements",
+  "questions": [
+    {
+      "num": 1,
+      "question": "For 1 cm gap in air at 760 mm pressure and 20°C temperature the Break Down Voltage is -",
+      "answers": {
+        "a": "14 kV",
+        "b": "30.3 kV",
+        "c": "22.92 kV",
+        "d": "40 kV"
+      },
+      "explanations": {
+        "a": "Incorrect. That is too low for 1 cm gap.",
+        "b": "Correct. Paschen's curve gives approximately 30.3 kV for 1 cm gap at standard conditions.",
+        "c": "Incorrect. 22.92 kV is for a different gap distance.",
+        "d": "Incorrect. Too high for 1 cm gap."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "num": 2,
+      "question": "Sphere gaps are used to measure -",
+      "answers": {
+        "a": "DC Voltages",
+        "b": "AC Voltages",
+        "c": "DC, AC peak and impulse voltages",
+        "d": "Only DC and AC peak voltage"
+      },
+      "explanations": {
+        "a": "Partial answer. Sphere gaps measure more than just DC.",
+        "b": "Partial answer. They also measure DC and impulse.",
+        "c": "Correct. Sphere gaps are standard for measuring DC, AC peak, and impulse voltages.",
+        "d": "Incorrect. They also measure impulse voltages."
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "num": 3,
+      "question": "Sphere gap BDV measurement is linear and valid for gap spacing less than -",
+      "answers": {
+        "a": "the Radius of sphere",
+        "b": "the diameter of sphere",
+        "c": "Half the radius of sphere",
+        "d": "Two times the diameter of sphere"
+      },
+      "explanations": {
+        "a": "Correct. For accurate measurements, gap spacing should be less than the sphere radius to maintain uniform field.",
+        "b": "Incorrect. That would cause field distortion.",
+        "c": "Incorrect.",
+        "d": "Incorrect."
+      },
+      "correctAnswer": "a",
+      "difficulty": "advanced"
+    },
+    {
+      "num": 4,
+      "question": "In volt-time characteristics, the breakdown voltage for a negative impulse is _______ the positive impulse.",
+      "answers": {
+        "a": "Less Than",
+        "b": "Greater Than",
+        "c": "Equal To",
+        "d": "None of these"
+      },
+      "explanations": {
+        "a": "Correct. For non-uniform fields, negative impulse breakdown voltage is generally less than positive impulse due to space charge effects.",
+        "b": "Incorrect. Negative impulse typically has lower breakdown voltage.",
+        "c": "Incorrect.",
+        "d": "Incorrect."
+      },
+      "correctAnswer": "a",
+      "difficulty": "advanced"
+    },
+    {
+      "num": 5,
+      "question": "The main factors that affect the spark over voltage of sphere gap are -",
+      "answers": {
+        "a": "Humidity and waveform",
+        "b": "Nearby earthed objects and atmospheric conditions",
+        "c": "Diameter of sphere",
+        "d": "Gap spacing, diameter & waveform"
+      },
+      "explanations": {
+        "a": "Partial but incomplete.",
+        "b": "Correct. Nearby earthed objects distort the field, and atmospheric conditions (pressure, temp, humidity) affect breakdown.",
+        "c": "Partial.",
+        "d": "Incorrect. Waveform is not a primary factor for sphere gap calibration."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    }
+  ]
+}

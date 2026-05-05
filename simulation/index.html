@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simulation of Exp4 – Dielectric Breakdown</title>
+  <meta name="description" content="Interactive simulation of dielectric breakdown in transformer oil. Increase voltage to observe breakdown events and plot the voltage-time graph."/>
+  <link rel="stylesheet" href="main.css"/>
+</head>
+<body>
+
+  <!-- ===== MAIN INTERFACE ===== -->
+  <div class="Interface">
+
+    <!-- TOP ROW: Left controls + Centre apparatus image -->
+    <div class="Interface-vp1">
+
+      <!-- Left control panel -->
+      <div class="Interface-inVp1">
+
+        <!-- Voltmeter -->
+        <div class="voltmeter-section">
+          <div class="Interface-voltMeterLabel">Voltmeter(KV)</div>
+          <div class="Interface-voltMeter" id="voltmeter">0</div>
+        </div>
+
+        <!-- Increase Voltage sub-panel -->
+        <div class="Interface-inVp11">
+          <div class="Interface-voltageLabel">Increase Voltage</div>
+          <button class="Interface-voltage" id="btnIncrease" onclick="increaseVoltage()" title="Increase Voltage (Space / ↑)"></button>
+        </div>
+
+        <!-- Restart -->
+        <button class="Interface-reset" id="btnReset" onclick="resetTest()">Restart Test</button>
+
+        <!-- Status message -->
+        <div class="Interface-message" id="messageBox"></div>
+
+      </div><!-- /Interface-inVp1 -->
+
+      <!-- Centre: apparatus photo with spark overlay -->
+      <div class="apparatus-photo-wrap">
+        <img class="Interface-img" id="apparatusImg"
+             src="apparatus.jpg"
+             alt="Dielectric breakdown apparatus – electrodes in transformer oil"
+             onerror="this.style.display='none'; document.getElementById('apparatusFallback').style.display='flex'"/>
+        <!-- Fallback canvas if image fails to load -->
+        <canvas id="apparatusFallback" class="Interface-img apparatus-fallback" width="220" height="210" style="display:none"></canvas>
+        <!-- Spark canvas overlaid on photo -->
+        <canvas id="sparkCanvas" class="spark-canvas" width="220" height="210"></canvas>
+      </div>
+
+    </div><!-- /Interface-vp1 -->
+
+    <!-- BOTTOM ROW: Change oil + Breakdowns + Graph -->
+    <div class="Interface-vp2">
+
+      <!-- Bottom-left -->
+      <div class="bottom-left">
+        <button class="Interface-masterReset" id="btnChangeOil" onclick="changeOil()">Change Trasnsformer Oil</button>
+
+        <div class="breakdown-section">
+          <div class="bd-title">BreakDowns-</div>
+          <select class="Interface-brakedownList" id="breakdownList" size="5"></select>
+        </div>
+      </div>
+
+      <!-- Graph -->
+      <div class="Interface-graph">
+        <div class="graph-wrap">
+          <div class="Graph-yLabel">Voltage(V)</div>
+          <canvas class="Graph-canvas" id="graphCanvas" width="450" height="220"></canvas>
+        </div>
+        <div class="Graph-xLabel">Time(t)</div>
+      </div>
+
+    </div><!-- /Interface-vp2 -->
+
+  </div><!-- /Interface -->
+
+  <!-- Experiment settings (below main box) -->
+  <div class="settings-bar">
+    <div class="settings-group">
+      <label class="settings-label">Electrode Shape:</label>
+      <label class="settings-radio"><input type="radio" name="shape" value="spherical" checked onchange="onShapeChange()"/> Spherical</label>
+      <label class="settings-radio"><input type="radio" name="shape" value="pointed" onchange="onShapeChange()"/> Pointed</label>
+      <label class="settings-radio"><input type="radio" name="shape" value="flat" onchange="onShapeChange()"/> Flat Plate</label>
+    </div>
+    <div class="settings-group">
+      <label class="settings-label">Gap Distance:</label>
+      <label class="settings-radio"><input type="radio" name="gap" value="10" checked onchange="onGapChange()"/> 10 mm</label>
+      <label class="settings-radio"><input type="radio" name="gap" value="20" onchange="onGapChange()"/> 20 mm</label>
+      <label class="settings-radio"><input type="radio" name="gap" value="30" onchange="onGapChange()"/> 30 mm</label>
+      <label class="settings-radio"><input type="radio" name="gap" value="40" onchange="onGapChange()"/> 40 mm</label>
+      <label class="settings-radio"><input type="radio" name="gap" value="50" onchange="onGapChange()"/> 50 mm</label>
+    </div>
+    <div class="settings-info" id="settingsInfo">Shape Factor η = 0.90 · Gap = 10 mm · Expected V_bd ≈ 27 kV</div>
+  </div>
+
+  <p class="keyboard-hint">Keyboard: Space / ↑ to increase voltage &nbsp;·&nbsp; R to restart</p>
+
+  <script src="main.js"></script>
+<script src="../assets/js/iframeResize.js"></script>
+        
+        </body>
+</html>

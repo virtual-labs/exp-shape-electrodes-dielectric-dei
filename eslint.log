@@ -1,0 +1,17 @@
+
+/home/runner/work/exp-shape-electrodes-dielectric-dei/exp-shape-electrodes-dielectric-dei/experiment/simulation/js/main.js
+   51:10  warning  'onShapeChange' is defined but never used  no-unused-vars
+   56:10  warning  'onGapChange' is defined but never used    no-unused-vars
+  152:10  warning  'changeOil' is defined but never used      no-unused-vars
+  267:12  warning  'i' is already defined                     no-redeclare
+  353:12  warning  'i' is already defined                     no-redeclare
+
+/home/runner/work/exp-shape-electrodes-dielectric-dei/exp-shape-electrodes-dielectric-dei/experiment/simulation/main.js
+   51:10  warning  'onShapeChange' is defined but never used  no-unused-vars
+   56:10  warning  'onGapChange' is defined but never used    no-unused-vars
+  152:10  warning  'changeOil' is defined but never used      no-unused-vars
+  267:12  warning  'i' is already defined                     no-redeclare
+  353:12  warning  'i' is already defined                     no-redeclare
+
+✖ 10 problems (0 errors, 10 warnings)
+
