@@ -1,1 +1,307 @@
+/* =================== RESET & BASE =================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+body {
+  background: #FFF9FF;
+  font-family: sans-serif;
+  padding: 18px;
+  color: #000;
+}
+
+/* =================== MAIN INTERFACE BOX =================== */
+.Interface {
+  display: inline-block;
+  border: black solid 2px;
+  padding: 6px;
+  background: #FFF9FF;
+}
+
+/* ===== TOP ROW ===== */
+.Interface-vp1 {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  width: 700px;
+  position: relative;
+}
+
+/* Horizontal wire lines connecting control box to apparatus */
+.Interface-vp1::before,
+.Interface-vp1::after {
+  content: '';
+  position: absolute;
+  height: 3px;
+  background: #333;
+  z-index: 0;
+  pointer-events: none;
+}
+.Interface-vp1::before {
+  left: 218px;
+  width: 30px;
+  top: 68px;
+}
+.Interface-vp1::after {
+  left: 218px;
+  width: 30px;
+  top: 98px;
+}
+
+/* ===== LEFT CONTROL PANEL ===== */
+.Interface-inVp1 {
+  padding: 8px;
+  border: #002200 dotted 2px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  min-width: 185px;
+  position: relative;
+  z-index: 1;
+  background: #FFF9FF;
+}
+
+/* Voltmeter section */
+.voltmeter-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+}
+
+.Interface-voltMeterLabel {
+  font: bold small sans-serif;
+}
+
+.Interface-voltMeter {
+  background-color: #001500;
+  color: lightgreen;
+  padding-top: 8px;
+  font: bold 1.4rem 'Courier New', monospace;
+  border: solid 1px #000;
+  width: 152px;
+  height: 45px;
+  text-align: center;
+  letter-spacing: 3px;
+  text-shadow: 0 0 6px #00ff00;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+/* Increase Voltage sub-panel */
+.Interface-inVp11 {
+  padding: 5px;
+  border: #002200 dotted 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.Interface-voltageLabel {
+  font: bold small sans-serif;
+  align-self: flex-start;
+}
+
+/* The green glowing knob button */
+.Interface-voltage {
+  width: 50px;
+  height: 50px;
+  border-radius: 6px;
+  border: 2px solid #005500;
+  background: radial-gradient(circle at 35% 35%, #c8ffb0, #22cc22 48%, #006600);
+  cursor: pointer;
+  box-shadow: 0 0 10px #00cc00, inset 0 0 5px rgba(255,255,255,0.35);
+  transition: box-shadow 0.12s, transform 0.12s;
+  outline: none;
+}
+.Interface-voltage:hover {
+  box-shadow: 0 0 20px #00ff00, inset 0 0 8px rgba(255,255,255,0.5);
+  transform: scale(1.06);
+}
+.Interface-voltage:active {
+  transform: scale(0.94);
+  box-shadow: 0 0 4px #006600;
+}
+.Interface-voltage:disabled {
+  background: radial-gradient(circle at 35% 35%, #ccc, #888 50%, #444);
+  border-color: #666;
+  box-shadow: none;
+  cursor: default;
+  opacity: 0.5;
+}
+
+/* Restart button */
+.Interface-reset {
+  font: bold small sans-serif;
+  padding: 3px 10px;
+  cursor: pointer;
+  border: 2px outset #ccc;
+  background: #e8e8e8;
+}
+.Interface-reset:hover { background: #d0d0d0; }
+.Interface-reset:active { border-style: inset; }
+
+/* Status message */
+.Interface-message {
+  color: red;
+  font: bold 12px sans-serif;
+  min-height: 16px;
+}
+
+/* ===== APPARATUS PHOTO ===== */
+.apparatus-photo-wrap {
+  position: relative;
+  margin-left: 30px;
+  z-index: 1;
+}
+
+.Interface-img {
+  border: black solid 2px;
+  width: 230px;
+  height: 215px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Spark canvas overlaid on apparatus image */
+.spark-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 230px;
+  height: 215px;
+  pointer-events: none;
+}
+
+/* Fallback apparatus canvas */
+.apparatus-fallback {
+  background: #1a1a1a;
+}
+
+/* ===== BOTTOM ROW ===== */
+.Interface-vp2 {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  width: 700px;
+  margin-top: 10px;
+  padding-top: 6px;
+}
+
+/* Bottom-left: oil button + breakdown list */
+.bottom-left {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 215px;
+}
+
+/* Change Oil button */
+.Interface-masterReset {
+  font: bold small sans-serif;
+  padding: 4px 8px;
+  cursor: pointer;
+  border: 2px outset #ccc;
+  background: #e8e8e8;
+}
+.Interface-masterReset:hover { background: #d0d0d0; }
+.Interface-masterReset:active { border-style: inset; }
+
+/* Breakdown section */
+.breakdown-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.bd-title {
+  font: bold 12px sans-serif;
+  color: #000;
+}
+
+.Interface-brakedownList {
+  width: 215px;
+  height: 110px;
+  text-align: center;
+  font: bold 12px sans-serif;
+  border: 1px solid #999;
+  background: #fff;
+}
+
+/* ===== GRAPH ===== */
+.Interface-graph {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.graph-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.Graph-yLabel {
+  color: blue;
+  font: bold 12px sans-serif;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-align: center;
+  align-self: center;
+  white-space: nowrap;
+}
+
+.Graph-canvas {
+  border-bottom: solid 2px #000;
+  border-left: solid 2px #000;
+  background: #fff;
+}
+
+.Graph-xLabel {
+  color: blue;
+  font: bold 12px sans-serif;
+  text-align: right;
+  margin-left: 20px;
+  margin-top: 2px;
+}
+
+/* =================== SETTINGS BAR (below main box) =================== */
+.settings-bar {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font: 12px sans-serif;
+}
+
+.settings-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.settings-label {
+  font: bold 12px sans-serif;
+  min-width: 110px;
+}
+
+.settings-radio {
+  font: 12px sans-serif;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.settings-info {
+  font: italic 11px sans-serif;
+  color: #444;
+  margin-top: 2px;
+}
+
+/* Keyboard hint */
+.keyboard-hint {
+  margin-top: 8px;
+  font: italic 11px sans-serif;
+  color: #666;
+}
