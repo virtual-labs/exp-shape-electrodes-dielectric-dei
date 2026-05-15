@@ -1,10 +1,10 @@
 {
   "version": 2.0,
-  "quiz_title": "QUIZ - High Voltage Measurements",
+
   "questions": [
     {
-      "num": 6,
-      "question": "Impulse ratio of a rod gap -",
+     
+      "question": "6. Impulse ratio of a rod gap -",
       "answers": {
         "a": "Unity",
         "b": "Between 1.2 and 1.5",
@@ -21,8 +21,8 @@
       "difficulty": "advanced"
     },
     {
-      "num": 7,
-      "question": "which electrode has minimum breakdown voltage -",
+     
+      "question": "7. which electrode has minimum breakdown voltage -",
       "answers": {
         "a": "Sphere electrode",
         "b": "Pointed electrode",
@@ -39,8 +39,8 @@
       "difficulty": "beginner"
     },
     {
-      "num": 8,
-      "question": "The insulation of the modern EHV lines is designed based on -",
+      
+      "question": "8. The insulation of the modern EHV lines is designed based on -",
       "answers": {
         "a": "The lightning voltage",
         "b": "The switching voltage",
@@ -57,8 +57,8 @@
       "difficulty": "intermediate"
     },
     {
-      "num": 9,
-      "question": "Minimum sparking potential of Air is about -",
+    
+      "question": "9. Minimum sparking potential of Air is about -",
       "answers": {
         "a": "100 V",
         "b": "4.4 kV",
@@ -75,8 +75,8 @@
       "difficulty": "advanced"
     },
     {
-      "num": 10,
-      "question": "Electrostatic voltmeter can measure -",
+     
+      "question": "10. Electrostatic voltmeter can measure -",
       "answers": {
         "a": "Only DC voltages",
         "b": "Both DC and AC voltages upto high frequency",
