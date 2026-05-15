@@ -15,4 +15,4 @@
 
 ## Fig.5.1: Block Diagram of HV Setup
 
-![Block Diagram of HV Setup](../Dreamweaver/images/exp5/block5.jpg)
+![Block Diagram of HV Setup](images/exp5/block5.jpg)
