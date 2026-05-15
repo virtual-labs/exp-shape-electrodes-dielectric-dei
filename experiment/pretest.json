@@ -1,10 +1,10 @@
 {
   "version": 2.0,
-  "quiz_title": "QUIZ - High Voltage Measurements",
+  
   "questions": [
     {
-      "num": 1,
-      "question": "For 1 cm gap in air at 760 mm pressure and 20°C temperature the Break Down Voltage is -",
+      
+      "question": "1. For 1 cm gap in air at 760 mm pressure and 20°C temperature the Break Down Voltage is -",
       "answers": {
         "a": "14 kV",
         "b": "30.3 kV",
@@ -21,8 +21,8 @@
       "difficulty": "intermediate"
     },
     {
-      "num": 2,
-      "question": "Sphere gaps are used to measure -",
+     
+      "question": "2. Sphere gaps are used to measure -",
       "answers": {
         "a": "DC Voltages",
         "b": "AC Voltages",
@@ -39,8 +39,7 @@
       "difficulty": "beginner"
     },
     {
-      "num": 3,
-      "question": "Sphere gap BDV measurement is linear and valid for gap spacing less than -",
+      "question": "3. Sphere gap BDV measurement is linear and valid for gap spacing less than -",
       "answers": {
         "a": "the Radius of sphere",
         "b": "the diameter of sphere",
@@ -57,8 +56,8 @@
       "difficulty": "advanced"
     },
     {
-      "num": 4,
-      "question": "In volt-time characteristics, the breakdown voltage for a negative impulse is _______ the positive impulse.",
+     
+      "question": "4. In volt-time characteristics, the breakdown voltage for a negative impulse is _______ the positive impulse.",
       "answers": {
         "a": "Less Than",
         "b": "Greater Than",
@@ -75,8 +74,8 @@
       "difficulty": "advanced"
     },
     {
-      "num": 5,
-      "question": "The main factors that affect the spark over voltage of sphere gap are -",
+     
+      "question": "5. The main factors that affect the spark over voltage of sphere gap are -",
       "answers": {
         "a": "Humidity and waveform",
         "b": "Nearby earthed objects and atmospheric conditions",
