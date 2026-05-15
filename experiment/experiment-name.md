@@ -1,2 +1,1 @@
-## To Study the effect of different shape of electrodes on dielectric (air) breakdown.
-
+## Study of Effect of Different Electrode Shapes on Dielectric (Air) Breakdown
