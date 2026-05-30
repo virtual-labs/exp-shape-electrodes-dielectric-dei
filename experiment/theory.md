@@ -12,11 +12,19 @@ There are basically two basic arrangements of sphere gaps for measuring purposes
 
 #### Horizontal Arrangement
 
+<div align="center">
+
 ![Horizontal arrangement](images/exp5/hor.jpg)
+
+</div>
 
 #### Vertical Arrangement
 
+<div align="center">
+
 ![Vertical arrangement](images/exp5/ver.jpg)
+
+</div>
 
 ## Procedure
 
@@ -25,28 +33,64 @@ There are basically two basic arrangements of sphere gaps for measuring purposes
 3. The multiple point control switch is set at its lowest tapping.
 4. The push button on control unit is pressed firmly for at least 5 seconds. Note that no Breakdown to occurs, in which case button should be released at once without delay. Break down is indicated by a continuous discharge across the gap and meter indicating a sudden voltage drop.
 
-# Experiment 5 - Equipments Required
+##   Equipments Required
 
 ## Fig.1: High Voltage Transformer
 
+<div align="center">
+
 ![High Voltage Transformer](images/exp5/tr3.JPG)
+
+</div>
 
 ## Fig.2: HV Control Desk
 
+<div align="center">
+
 ![HV Control Desk](images/exp5/equ2.JPG)
+
+</div>
 
 ## Fig.3: Spherical Electrode
 
+<div align="center">
+
 ![Spherical Electrode](images/exp5/n1.jpg)
+
+</div>
 
 ## Fig.4: Flat Electrode
 
+<div align="center">
+
 ![Flat Electrode](images/exp5/equ4.JPG)
+
+</div>
 
 ## Fig.5: Disk Electrode
 
+<div align="center">
+
 ![Disk Electrode](images/exp5/equ5.JPG)
+
+</div>
 
 ## Fig.6: Pointed Electrode
 
+<div align="center">
+
 ![Pointed Electrode](images/exp5/equ6.JPG)
+
+</div>
+
+<!-- end #menu -->
+
+## Video for experiment:
+
+<br/><br/><br/>
+<div style="text-align: center;">
+    <b style="font-size:18px"> To Study the effect of different shape of electrodes on dielectric (air) breakdown.</b><br/><br/>
+    <video width="480" height="360" controls>
+        <source src="videos/video5.mp4" type="video/mp4">
+    </video>
+</div>
