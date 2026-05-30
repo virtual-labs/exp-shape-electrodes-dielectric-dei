@@ -43,7 +43,7 @@ There are basically two basic arrangements of sphere gaps for measuring purposes
 
 </div>
 
-## Fig.2: HV Control Desk
+### Fig.2: HV Control Desk
 
 <div align="center">
 
@@ -51,7 +51,7 @@ There are basically two basic arrangements of sphere gaps for measuring purposes
 
 </div>
 
-## Fig.3: Spherical Electrode
+####  Fig.3: Spherical Electrode
 
 <div align="center">
 
