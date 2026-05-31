@@ -35,7 +35,7 @@ There are basically two basic arrangements of sphere gaps for measuring purposes
 
 ##   Equipments Required
 
-## Fig.1: High Voltage Transformer
+### Fig.1: High Voltage Transformer
 
 <div align="center">
 
@@ -51,7 +51,7 @@ There are basically two basic arrangements of sphere gaps for measuring purposes
 
 </div>
 
-####  Fig.3: Spherical Electrode
+###  Fig.3: Spherical Electrode
 
 <div align="center">
 
@@ -59,7 +59,7 @@ There are basically two basic arrangements of sphere gaps for measuring purposes
 
 </div>
 
-## Fig.4: Flat Electrode
+### Fig.4: Flat Electrode
 
 <div align="center">
 
@@ -67,7 +67,7 @@ There are basically two basic arrangements of sphere gaps for measuring purposes
 
 </div>
 
-## Fig.5: Disk Electrode
+### Fig.5: Disk Electrode
 
 <div align="center">
 
@@ -75,7 +75,7 @@ There are basically two basic arrangements of sphere gaps for measuring purposes
 
 </div>
 
-## Fig.6: Pointed Electrode
+### Fig.6: Pointed Electrode
 
 <div align="center">
 
