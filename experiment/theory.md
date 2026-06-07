@@ -1,5 +1,3 @@
-
-
 ## Theory
 
 High alternating voltages are required in laboratories for experiments and AC tests as well as for most of the circuits for the generation of high direct and impulse voltages. Test transformers generally used for this purpose have considerably lower power rating and frequently much larger transformation ratios than power transformers. The high voltage winding is so designed that it can withstand the routine breakdowns which generally occur on the specimen. The primary current is usually supplied by regulating transformers fed from main supply.
@@ -62,25 +60,23 @@ There are basically two basic arrangements of sphere gaps for measuring purposes
 ### Fig.4: Flat Electrode
 
 <div align="center">
-
-![Flat Electrode](images/exp5/equ4.JPG)
-
+  <img src="images/exp5/equ4.JPG" alt="Flat Electrode" width="300">
 </div>
+
+<br>
 
 ### Fig.5: Disk Electrode
 
 <div align="center">
-
-![Disk Electrode](images/exp5/equ5.JPG)
-
+  <img src="images/exp5/equ5.JPG" alt="Disk Electrode" width="300">
 </div>
+
+<br>
 
 ### Fig.6: Pointed Electrode
 
 <div align="center">
-
-![Pointed Electrode](images/exp5/equ6.JPG)
-
+  <img src="images/exp5/equ6.JPG" alt="Pointed Electrode" width="300">
 </div>
 
 <!-- end #menu -->
