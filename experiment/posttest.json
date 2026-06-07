@@ -1,10 +1,8 @@
 {
   "version": 2.0,
-
   "questions": [
     {
-     
-      "question": "6. Impulse ratio of a rod gap -",
+      "question": "1. Impulse ratio of a rod gap -",
       "answers": {
         "a": "Unity",
         "b": "Between 1.2 and 1.5",
@@ -17,12 +15,10 @@
         "c": "Incorrect. That range is too high.",
         "d": "Incorrect."
       },
-      "correctAnswer": "b",
-      "difficulty": "advanced"
+      "correctAnswer": "b"
     },
     {
-     
-      "question": "7. which electrode has minimum breakdown voltage -",
+      "question": "2. which electrode has minimum breakdown voltage -",
       "answers": {
         "a": "Sphere electrode",
         "b": "Pointed electrode",
@@ -35,12 +31,10 @@
         "c": "Incorrect. Flat electrodes require higher voltage.",
         "d": "Incorrect. Large spheres give more uniform field, higher breakdown voltage."
       },
-      "correctAnswer": "b",
-      "difficulty": "beginner"
+      "correctAnswer": "b"
     },
     {
-      
-      "question": "8. The insulation of the modern EHV lines is designed based on -",
+      "question": "3. The insulation of the modern EHV lines is designed based on -",
       "answers": {
         "a": "The lightning voltage",
         "b": "The switching voltage",
@@ -53,12 +47,10 @@
         "c": "Incorrect. Corona affects losses and RI, not basic insulation level.",
         "d": "Incorrect."
       },
-      "correctAnswer": "b",
-      "difficulty": "intermediate"
+      "correctAnswer": "b"
     },
     {
-    
-      "question": "9. Minimum sparking potential of Air is about -",
+      "question": "4. Minimum sparking potential of Air is about -",
       "answers": {
         "a": "100 V",
         "b": "4.4 kV",
@@ -71,12 +63,10 @@
         "c": "Incorrect. Too low for Paschen's minimum.",
         "d": "Correct. Paschen's minimum for air is approximately 325 V at a pressure × distance (pd) of about 0.75 Torr·cm."
       },
-      "correctAnswer": "d",
-      "difficulty": "advanced"
+      "correctAnswer": "d"
     },
     {
-     
-      "question": "10. Electrostatic voltmeter can measure -",
+      "question": "5. Electrostatic voltmeter can measure -",
       "answers": {
         "a": "Only DC voltages",
         "b": "Both DC and AC voltages upto high frequency",
@@ -89,8 +79,7 @@
         "c": "Incorrect. Not suitable for fast impulses due to mechanical inertia.",
         "d": "Incorrect. It measures RMS, not peak."
       },
-      "correctAnswer": "b",
-      "difficulty": "intermediate"
+      "correctAnswer": "b"
     }
   ]
 }
