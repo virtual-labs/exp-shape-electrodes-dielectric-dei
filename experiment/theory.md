@@ -60,25 +60,26 @@ There are basically two basic arrangements of sphere gaps for measuring purposes
 ### Fig.4: Flat Electrode
 
 <div align="center">
-  <img src="images/exp5/equ4.JPG" alt="Flat Electrode" width="300">
-</div>
 
-<br>
+![Flat Electrode](images/exp5/equ4.JPG)
+
+</div>
 
 ### Fig.5: Disk Electrode
 
 <div align="center">
-  <img src="images/exp5/equ5.JPG" alt="Disk Electrode" width="300">
-</div>
 
-<br>
+![Disk Electrode](images/exp5/equ5.JPG)
+
+</div>
 
 ### Fig.6: Pointed Electrode
 
 <div align="center">
-  <img src="images/exp5/equ6.JPG" alt="Pointed Electrode" width="300">
-</div>
 
+![Pointed Electrode](images/exp5/equ6.JPG)
+
+</div>
 <!-- end #menu -->
 
 ## Video for experiment:
