@@ -332,7 +332,7 @@
 
         document.querySelectorAll('input[name="shape"]').forEach(radio => {
             radio.addEventListener('change', () => {
-                if (!isTesting && voltage === 0) {
+                if (!isTesting) {
                     updateApparatusImage('normal');
                 }
             });
@@ -368,12 +368,33 @@
             ctx.stroke();
         }
 
+        function resetTest() {
+            clearInterval(testInterval);
+            isTesting = false;
+            voltage = 0;
+            time = 0;
+            graphData = [];
+            voltmeter.innerText = '0.0';
+            btnIncrease.disabled = false;
+            document.querySelectorAll('input[type="radio"]').forEach(r => r.disabled = false);
+            updateApparatusImage('normal');
+            drawGraph();
+        }
+
         btnIncrease.addEventListener('click', () => {
             if (isTesting) return;
+            
+            // If starting a new test after a breakdown without clicking restart
+            if (voltage > 0) {
+                resetTest();
+            }
             
             isTesting = true;
             btnIncrease.disabled = true;
             document.querySelectorAll('input[type="radio"]').forEach(r => r.disabled = true);
+            
+            // Ensure apparatus is normal when test begins
+            updateApparatusImage('normal');
             
             const targetBreakdown = getBreakdownVoltage();
             
@@ -411,22 +432,15 @@
             breakdownList.scrollTop = breakdownList.scrollHeight;
 
             setTimeout(() => {
-                // Test ends, stay in broken state until reset
-                // updateApparatusImage('normal');
+                // Test ends, re-enable buttons so user can select different shapes/distances immediately
+                isTesting = false;
+                btnIncrease.disabled = false;
+                document.querySelectorAll('input[type="radio"]').forEach(r => r.disabled = false);
             }, 1000);
         }
 
         btnRestart.addEventListener('click', () => {
-            clearInterval(testInterval);
-            isTesting = false;
-            voltage = 0;
-            time = 0;
-            graphData = [];
-            voltmeter.innerText = '0';
-            btnIncrease.disabled = false;
-            document.querySelectorAll('input[type="radio"]').forEach(r => r.disabled = false);
-            updateApparatusImage('normal');
-            drawGraph();
+            resetTest();
         });
 
         setTimeout(resizeCanvas, 100);
