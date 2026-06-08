@@ -1,1 +1,437 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dielectric Breakdown Simulation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #ffffff;
+            color: #000000;
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .dashboard {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        /* Left Column */
+        .left-col {
+            width: 220px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .control-panel {
+            border: 2px solid black;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: white;
+        }
+
+        .voltmeter-box, .increase-box {
+            border: 2px dotted #002200;
+            padding: 10px;
+            width: 180px;
+            text-align: center;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        .voltmeter-title, .increase-title {
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .voltmeter-display {
+            background-color: #001500;
+            color: #33ff33;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 5px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid transparent;
+        }
+
+        .increase-btn {
+            background: url("images/knob.png") no-repeat center center;
+            background-size: contain;
+            width: 40px;
+            height: 40px;
+            border: none;
+            cursor: pointer;
+            margin: 0 auto;
+            display: block;
+            transition: transform 0.1s;
+        }
+        .increase-btn:active {
+            transform: scale(0.95);
+        }
+        .increase-btn:disabled {
+            background: url("images/knobDisabled.png") no-repeat center center;
+            background-size: contain;
+            cursor: default;
+        }
+
+        .restart-btn {
+            font-weight: bold;
+            font-size: 12px;
+            padding: 4px 10px;
+            cursor: pointer;
+            border: 1px solid #777;
+            background: #eee;
+            margin-top: 5px;
+        }
+
+        .breakdown-title {
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .breakdown-list {
+            width: 100%;
+            height: 80px;
+            border: 1px solid #999;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            padding: 2px;
+            overflow-y: auto;
+            box-sizing: border-box;
+            background: white;
+        }
+        
+        .breakdown-item {
+            padding: 2px;
+        }
+
+        /* Center Column & Wires */
+        .wire-container {
+            width: 70px;
+            padding-top: 80px; /* Align with top of the panels */
+        }
+
+        .wires {
+            width: 100%;
+            height: 15px;
+            border-top: 5px solid black;
+            border-bottom: 5px solid black;
+        }
+
+        .center-col {
+            width: 350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .apparatus-img {
+            width: 250px;
+            height: 250px;
+            border: 2px solid black;
+            object-fit: cover;
+            background: white;
+        }
+
+        /* Graph */
+        .graph-container {
+            position: relative;
+            width: 350px;
+            height: 200px;
+            margin-top: 50px;
+        }
+
+        .graph-canvas {
+            border-left: 2px solid black;
+            border-bottom: 2px solid black;
+            width: 100%;
+            height: 100%;
+        }
+
+        .y-label {
+            position: absolute;
+            left: -40px;
+            top: 50%;
+            transform: translateY(-50%) rotate(-90deg);
+            color: blue;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .x-label {
+            position: absolute;
+            right: 0;
+            bottom: -20px;
+            color: blue;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        /* Right Column */
+        .right-col {
+            width: 250px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-left: 30px;
+        }
+
+        .config-box {
+            border: 2px solid black;
+            padding: 15px;
+            font-size: 13px;
+        }
+
+        .config-title {
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .radio-option input {
+            margin-right: 8px;
+            cursor: pointer;
+        }
+
+        .radio-icon {
+            margin-left: 5px;
+            height: 18px;
+            vertical-align: middle;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="dashboard">
+        <!-- Left Panel -->
+        <div class="left-col">
+            <div class="control-panel">
+                <div class="voltmeter-box">
+                    <div class="voltmeter-title">Voltmeter(KV)</div>
+                    <div class="voltmeter-display" id="voltmeter">0</div>
+                </div>
+                <div class="increase-box">
+                    <div class="increase-title">Increase Voltage</div>
+                    <button class="increase-btn" id="btn-increase"></button>
+                </div>
+                <button class="restart-btn" id="btn-restart">Restart Test</button>
+            </div>
+
+            <div>
+                <div class="breakdown-title">BreakDowns-</div>
+                <div class="breakdown-list" id="breakdown-list"></div>
+            </div>
+        </div>
+
+        <!-- Connecting Wires -->
+        <div class="wire-container">
+            <div class="wires"></div>
+        </div>
+
+        <!-- Center Panel -->
+        <div class="center-col">
+            <img id="apparatus-img" class="apparatus-img" src="images/1.jpg" alt="Apparatus">
+            
+            <div class="graph-container">
+                <div class="y-label">Voltage (v)</div>
+                <canvas id="graphCanvas" class="graph-canvas"></canvas>
+                <div class="x-label">Time(t)</div>
+            </div>
+        </div>
+
+        <!-- Right Panel -->
+        <div class="right-col">
+            <div class="config-box">
+                <div class="config-title">Select the Electrode Shape-</div>
+                <label class="radio-option">
+                    <input type="radio" name="shape" value="1" checked> Spherical
+                    <img src="images/s.png" class="radio-icon" alt="spherical">
+                </label>
+                <label class="radio-option">
+                    <input type="radio" name="shape" value="2"> Pointed
+                    <img src="images/p.png" class="radio-icon" alt="pointed">
+                </label>
+                <label class="radio-option">
+                    <input type="radio" name="shape" value="3"> Flat
+                    <img src="images/f.png" class="radio-icon" alt="flat">
+                </label>
+            </div>
+
+            <div class="config-box">
+                <div class="config-title">Select the distance between the Electrodes -</div>
+                <label class="radio-option"><input type="radio" name="distance" value="10" checked> 10 mm</label>
+                <label class="radio-option"><input type="radio" name="distance" value="20"> 20 mm</label>
+                <label class="radio-option"><input type="radio" name="distance" value="30"> 30 mm</label>
+                <label class="radio-option"><input type="radio" name="distance" value="40"> 40 mm</label>
+                <label class="radio-option"><input type="radio" name="distance" value="50"> 50 mm</label>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const voltmeter = document.getElementById('voltmeter');
+        const btnIncrease = document.getElementById('btn-increase');
+        const btnRestart = document.getElementById('btn-restart');
+        const apparatusImg = document.getElementById('apparatus-img');
+        const breakdownList = document.getElementById('breakdown-list');
+        const canvas = document.getElementById('graphCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let isTesting = false;
+        let voltage = 0;
+        let time = 0;
+        let testInterval = null;
+        let graphData = [];
+        let breakdownCount = 0;
+
+        // Breakdown thresholds setup
+        const shapeMultipliers = {
+            '1': 3.0, // Spherical
+            '2': 1.2, // Pointed
+            '3': 4.5  // Flat
+        };
+
+        function getBreakdownVoltage() {
+            const shape = document.querySelector('input[name="shape"]:checked').value;
+            const distance = parseInt(document.querySelector('input[name="distance"]:checked').value);
+            
+            const baseVoltage = distance * shapeMultipliers[shape];
+            const variation = baseVoltage * 0.05;
+            return baseVoltage + (Math.random() * variation * 2 - variation);
+        }
+
+        function updateApparatusImage(state) {
+            const shape = document.querySelector('input[name="shape"]:checked').value;
+            if (state === 'normal') {
+                apparatusImg.src = `images/${shape}.jpg`;
+            } else if (state === 'breakdown') {
+                apparatusImg.src = `images/b${shape}.gif`;
+            }
+        }
+
+        document.querySelectorAll('input[name="shape"]').forEach(radio => {
+            radio.addEventListener('change', () => {
+                if (!isTesting && voltage === 0) {
+                    updateApparatusImage('normal');
+                }
+            });
+        });
+
+        // Initialize Canvas
+        function resizeCanvas() {
+            canvas.width = canvas.parentElement.clientWidth;
+            canvas.height = canvas.parentElement.clientHeight;
+            drawGraph();
+        }
+        window.addEventListener('resize', resizeCanvas);
+
+        function drawGraph() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            if (graphData.length === 0) return;
+
+            ctx.beginPath();
+            ctx.strokeStyle = '#66e0cc'; // Cyan graph line like in the image
+            ctx.lineWidth = 2;
+            
+            const maxTime = 150; 
+            const maxVolt = 250; 
+
+            graphData.forEach((point, index) => {
+                const x = (point.t / maxTime) * canvas.width;
+                const y = canvas.height - Math.min((point.v / maxVolt) * canvas.height, canvas.height);
+                
+                if (index === 0) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            });
+            
+            ctx.stroke();
+        }
+
+        btnIncrease.addEventListener('click', () => {
+            if (isTesting) return;
+            
+            isTesting = true;
+            btnIncrease.disabled = true;
+            document.querySelectorAll('input[type="radio"]').forEach(r => r.disabled = true);
+            
+            const targetBreakdown = getBreakdownVoltage();
+            
+            testInterval = setInterval(() => {
+                // steady increment to trace a straight diagonal line
+                voltage += 1.2; 
+                time += 1;
+                
+                voltmeter.innerText = voltage.toFixed(1);
+                graphData.push({t: time, v: voltage});
+                drawGraph();
+
+                if (voltage >= targetBreakdown) {
+                    triggerBreakdown();
+                }
+            }, 50);
+        });
+
+        function triggerBreakdown() {
+            clearInterval(testInterval);
+            updateApparatusImage('breakdown');
+            
+            breakdownCount++;
+            
+            // Draw straight drop on graph to simulate spark collapse
+            graphData.push({t: time, v: 0});
+            drawGraph();
+
+            const item = document.createElement('div');
+            item.className = 'breakdown-item';
+            item.innerText = `Breakdown No.- ${breakdownCount}, Voltage- ${voltage.toFixed(1)}`;
+            breakdownList.appendChild(item);
+            
+            // Auto scroll to bottom
+            breakdownList.scrollTop = breakdownList.scrollHeight;
+
+            setTimeout(() => {
+                // Test ends, stay in broken state until reset
+                // updateApparatusImage('normal');
+            }, 1000);
+        }
+
+        btnRestart.addEventListener('click', () => {
+            clearInterval(testInterval);
+            isTesting = false;
+            voltage = 0;
+            time = 0;
+            graphData = [];
+            voltmeter.innerText = '0';
+            btnIncrease.disabled = false;
+            document.querySelectorAll('input[type="radio"]').forEach(r => r.disabled = false);
+            updateApparatusImage('normal');
+            drawGraph();
+        });
+
+        setTimeout(resizeCanvas, 100);
+        updateApparatusImage('normal');
+    </script>
+</body>
+</html>
+
